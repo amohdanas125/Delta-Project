@@ -68,7 +68,13 @@ const sessionOptions ={
 // app.get("/", (req, res) => {
 //     res.send("I'm home page");
 // });
+app.get("/", (req, res) => {
+  res.send("Hello");
+});
 
+app.use((req, res) => {
+  res.status(404).send("Page not found");
+});
 
 
 app.use(session(sessionOptions));
