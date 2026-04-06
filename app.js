@@ -36,9 +36,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
-app.listen(8080, (req, res) => {
-    console.log("server is listening on port 8080");
+
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+    console.log(`server is listening on port ${PORT}`);
 });
+// app.listen(8080, (req, res) => {
+//     console.log("server is listening on port 8080");
+// });
 
 
 const store = MongoStore.create({
