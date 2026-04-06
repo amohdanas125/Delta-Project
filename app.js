@@ -69,7 +69,7 @@ const sessionOptions ={
 //     res.send("I'm home page");
 // });
 app.get("/", (req, res) => {
-  res.render("/listings");
+    res.redirect("/listings");
 });
 
 app.use((req, res) => {
