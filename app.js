@@ -75,7 +75,7 @@ const sessionOptions ={
 //     res.send("I'm home page");
 // });
 app.get("/", (req, res) => {
-    res.redirect("/listings");
+  res.render("home.ejs");
 });
 
 app.use((req, res) => {
