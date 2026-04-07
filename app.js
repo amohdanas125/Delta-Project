@@ -75,13 +75,8 @@ const sessionOptions ={
 //     res.send("I'm home page");
 // });
 app.get("/", (req, res) => {
-  res.render("home.ejs");
+    res.redirect("/listings");  
 });
-
-app.use((req, res) => {
-  res.status(404).send("Page not found");
-});
-
 
 app.use(session(sessionOptions));
 app.use(flash());
